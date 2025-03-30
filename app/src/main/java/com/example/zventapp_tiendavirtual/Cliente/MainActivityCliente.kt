@@ -1,4 +1,4 @@
-package com.example.zventapp_tiendavirtual.Vendedor
+package com.example.zventapp_tiendavirtual.Cliente
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,25 +9,24 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.example.zventapp_tiendavirtual.Cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
+import com.example.zventapp_tiendavirtual.Cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
+import com.example.zventapp_tiendavirtual.Cliente.Nav_Fragments_Cliente.FragmentInicioC
+import com.example.zventapp_tiendavirtual.Cliente.Nav_Fragments_Cliente.FragmentMiPerfilC
 import com.example.zventapp_tiendavirtual.R
 import com.example.zventapp_tiendavirtual.SeleccionarTipoActivity
-import com.example.zventapp_tiendavirtual.Vendedor.Bottom_Nav_Fragments_Vendedor.FragmentMisProductosV
-import com.example.zventapp_tiendavirtual.Vendedor.Bottom_Nav_Fragments_Vendedor.FragmentOrdenesV
-import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentInicioV
-import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentMiTiendaV
-import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentReseniasV
-import com.example.zventapp_tiendavirtual.databinding.ActivityMainVendedorBinding
+import com.example.zventapp_tiendavirtual.databinding.ActivityMainClienteBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
-class MainActivityVendedor : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
-     private lateinit var binding: ActivityMainVendedorBinding
-     private var firebaseAuth : FirebaseAuth?= null
+    private lateinit var binding: ActivityMainClienteBinding
+    private var firebaseAuth : FirebaseAuth ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainVendedorBinding.inflate(layoutInflater)
+        binding = ActivityMainClienteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -38,31 +37,27 @@ class MainActivityVendedor : AppCompatActivity(), NavigationView.OnNavigationIte
 
         binding.navigationView.setNavigationItemSelectedListener(this)
 
-        val toogle = ActionBarDrawerToggle(
+        val toggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
             toolbar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        
-        binding.drawerLayout.addDrawerListener(toogle)
-        toogle.syncState()
-        
-        replaceFragment(FragmentInicioV())
-        binding.navigationView.setCheckedItem(R.id.op_inicio_v)
-        
+
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        replaceFragment(FragmentInicioC())
 
     }
 
     private fun comprobarSesion() {
         if (firebaseAuth!!.currentUser == null){
             startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
-            Toast.makeText(applicationContext, "Vendedor No Registrado.", Toast.LENGTH_SHORT).show()
-
-
+            finishAffinity()
         } else {
-            Toast.makeText(applicationContext, "Vendedor en linea.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Cliente en linea.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -77,32 +72,29 @@ class MainActivityVendedor : AppCompatActivity(), NavigationView.OnNavigationIte
             .beginTransaction()
             .replace(R.id.navFragment, fragment)
             .commit()
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.op_inicio_v ->{
-                replaceFragment(FragmentInicioV())
+            R.id.op_inicio_c ->{
+                replaceFragment(FragmentInicioC())
             }
-            R.id.op_mi_tienda_v ->{
-                replaceFragment(FragmentMiTiendaV())
+            R.id.op_mi_perfil_c ->{
+                replaceFragment(FragmentMiPerfilC())
             }
-            R.id.op_resenia_v ->{
-                replaceFragment(FragmentReseniasV())
-            }
-            R.id.op_cerrar_sesion_v ->{
+            R.id.op_cerrar_sesion_c ->{
                 cerrarSesion()
             }
-            R.id.op_mis_productos_v ->{
-                replaceFragment(FragmentMisProductosV())
+            R.id.op_tienda_c ->{
+                replaceFragment(FragmentTiendaC())
             }
-            R.id.op_mis_ordenes_v ->{
-                replaceFragment(FragmentOrdenesV())
+            R.id.op_mis_ordenes_c ->{
+                replaceFragment(FragmentMisOrdenesC())
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
-
     }
 }

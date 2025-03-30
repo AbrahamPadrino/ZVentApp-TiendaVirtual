@@ -1,31 +1,67 @@
 <resources>
     <string name="app_name">Tienda Virtual - ZVentApp</string>
+
+    <string name="tipoVendedor">Vendedor</string>
+    <string name="tipoCliente">Cliente</string>
+
+    <!--NavigationDrawer Vendedor-->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda_v">Mi Tienda</string>
     <string name="op_resenia_v">Reseñas</string>
     <string name="op_cerrar_sesion_v">Cerrar Sesión</string>
 
+    <!--NavigationDrawer Cliente-->
+    <string name="op_inicio_c">Inicio</string>
+    <string name="op_mi_perfil_c">Mi Perfil</string>
+    <string name="op_cerrar_sesion_c">Cerrar sesión</string>
+
+    <!--Bottom Navigation Bar Vendedor-->
     <string name="op_mis_productos_v">Mis Productos</string>
     <string name="op_mis_ordenes_v">Órdenes</string>
+
+    <!--Bottom Navigation Bar Cliente-->
+    <string name="op_tienda_c">Tienda</string>
+    <string name="op_favoritos_c">Favoritos</string>
+    <string name="op_carrito_c">Carrito</string>
+    <string name="op_mis_ordenes_c">Mis órdenes</string>
 
     <string name="txt_bienvenida">Bienvenido(a)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="navigation_drawer_open">Open Drawer</string>
     <string name="navigation_drawer_close">Close Drawer</string>
 
-    <!--Registro de vendedor-->
-    <string name="txtRegistroV">Registro de vendedor</string>
-    <string name="etNombresV">Nombres completos</string>
-    <string name="etEmailV">Email</string>
-    <string name="etPasswordV">Password</string>
-    <string name="etCPasswordV">Confirmar password</string>
-    <string name="btnRegistrarV">Registrarme</string>
+    <!--Registro de Usuario-->
+    <string name="txtRegistroV">Registro de Vendedor</string>
+    <string name="txtRegistroC">Registro de Cliente</string>
+    <string name="etNombres">Nombres completos</string>
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="etCPassword">Confirmar password</string>
+    <string name="btnRegistrar">Registrarme</string>
 
     <!--Login de vendedor-->
     <string name="txtLoginV">Login de vendedor</string>
     <string name="btnLoginV">Ingresar</string>
     <string name="txtNoCuenta">¿No tienes una cuenta?</string>
     <string name="tvRegistrarV">Registrarme</string>
+
+    <!--Login de cliente-->
+    <string name="txtLoginC">Login de cliente</string>
+    <string name="btnLoginC">Ingresar</string>
+    <string name="tvRegistrarC">Registrarme</string>
+    <string name="tvRecuperarPass">Recuperar contraseña</string>
+
+    <!--Productos-->
+    <string name="txtAgregarProducto">Agregar Producto</string>
+    <string name="etNombresP">Nombre del Producto</string>
+    <string name="etDescripcionP">Descripción</string>
+    <string name="Categoria">Categoría</string>
+    <string name="etPrecioP">Precio</string>
+    <string name="txtDescuento">Descuento</string>
+    <string name="etPrecioConDescuentoP">Precio con descuento aplic.</string>
+    <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
+    <string name="btnAgregarProducto">Agregar Producto</string>
 
 </resources>
