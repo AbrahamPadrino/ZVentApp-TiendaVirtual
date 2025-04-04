@@ -66,7 +66,7 @@
     <string name="btnAgregarProducto">Agregar Producto</string>
 
     <!--Agregar Categorias-->
-    <string name="etCategoria">Ingrese Categoría</string>
+    <string name="etCategoria">Categoría</string>
     <string name="btnAgregarCategoria">Agregar Categoría</string>
 
 </resources>
