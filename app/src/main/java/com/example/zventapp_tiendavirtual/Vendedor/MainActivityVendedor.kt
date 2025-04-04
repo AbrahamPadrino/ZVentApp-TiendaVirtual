@@ -13,6 +13,7 @@ import com.example.zventapp_tiendavirtual.R
 import com.example.zventapp_tiendavirtual.SeleccionarTipoActivity
 import com.example.zventapp_tiendavirtual.Vendedor.Bottom_Nav_Fragments_Vendedor.FragmentMisProductosV
 import com.example.zventapp_tiendavirtual.Vendedor.Bottom_Nav_Fragments_Vendedor.FragmentOrdenesV
+import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentCategoriasV
 import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentInicioV
 import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentMiTiendaV
 import com.example.zventapp_tiendavirtual.Vendedor.Nav_Fragments_Vendedor.FragmentReseniasV
@@ -84,6 +85,9 @@ class MainActivityVendedor : AppCompatActivity(), NavigationView.OnNavigationIte
         when(item.itemId){
             R.id.op_inicio_v ->{
                 replaceFragment(FragmentInicioV())
+            }
+            R.id.op_categorias_v ->{
+                replaceFragment(FragmentCategoriasV())
             }
             R.id.op_mi_tienda_v ->{
                 replaceFragment(FragmentMiTiendaV())

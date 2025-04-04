@@ -7,6 +7,7 @@
     <!--NavigationDrawer Vendedor-->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda_v">Mi Tienda</string>
+    <string name="op_categorias_v">Categorias</string>
     <string name="op_resenia_v">Reseñas</string>
     <string name="op_cerrar_sesion_v">Cerrar Sesión</string>
 
@@ -63,5 +64,9 @@
     <string name="etPrecioConDescuentoP">Precio con descuento aplic.</string>
     <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
     <string name="btnAgregarProducto">Agregar Producto</string>
+
+    <!--Agregar Categorias-->
+    <string name="etCategoria">Ingrese Categoría</string>
+    <string name="btnAgregarCategoria">Agregar Categoría</string>
 
 </resources>
